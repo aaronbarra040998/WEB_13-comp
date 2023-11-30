@@ -1,0 +1,43 @@
+<div class="submit-form">
+  <form [formGroup]="tutorialForm">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="tutorial.title"
+          name="title"
+          formControlName="title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">URL</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="tutorial.description"
+          name="description"
+          formControlName="description"
+        />
+        <ng-container *ngIf="tutorialForm.get('description')?.invalid && (tutorialForm.get('description')?.dirty || tutorialForm.get('description')?.touched)">
+          <div class="invalid-feedback">
+            La URL no es válida.
+          </div>
+        </ng-container>
+      </div>
+      
+
+      <button [disabled]="!tutorialForm.valid" (click)="saveTutorial()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>URL was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newTutorial()">Add</button>
+    </div>
+  </form>
+</div>

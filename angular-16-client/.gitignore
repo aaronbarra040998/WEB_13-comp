@@ -1,0 +1,46 @@
+# Dependencias
+/node_modules
+
+# Archivos generados por el compilador de TypeScript
+/dist
+
+# Archivos generados por el servidor de desarrollo de Angular
+/.angular
+
+# Archivos de configuración
+/.editorconfig
+/.eslintrc.json
+/tsconfig.json
+/tslint.json
+
+# Archivos de registro
+/*.log
+
+# Archivos de respaldo
+*.bak
+*.swp
+*~
+
+# Archivos de entorno
+.env
+.env.prod
+.env.dev
+.env.local
+.env.test
+
+# Archivos de construcción
+/build
+
+# Archivos de pruebas
+/coverage
+/.nyc_output
+
+# Archivos de IDE
+/.vscode
+/.idea
+*.iml
+*.ipr
+*.iws
+*.bak
+*.swp
+*~

@@ -1,0 +1,35 @@
+# Dependencias
+/node_modules
+
+# Archivos de configuración
+.env
+
+# Archivos generados
+/dist
+/build
+
+# Logs
+/logs
+
+# Archivos de respaldo
+*.bak
+*.swp
+*.swo
+
+# Archivos de caché
+*.log
+*.cache
+
+# Archivos de IDE
+.vscode
+.idea
+
+# Archivos de compilación
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db

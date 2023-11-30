@@ -1,0 +1,21 @@
+.container {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.btn-group {
+  margin-bottom: 15px;
+}
+
+.list-group {
+  margin-top: 20px;
+}
+
+.btn-danger {
+  margin-top: 20px;
+}

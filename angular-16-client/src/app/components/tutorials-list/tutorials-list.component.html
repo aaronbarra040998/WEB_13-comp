@@ -1,0 +1,91 @@
+<!-- tutorials-list.component.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by title"
+          [(ngModel)]="title"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchTitle()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by date (YYYY-MM-DD)"
+          [(ngModel)]="date"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchDate()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+
+      <div class="btn-group" role="group">
+        <button
+          class="btn btn-primary"
+          type="button"
+          (click)="sortAlphabetically()"
+        >
+          Sort Alphabetically
+        </button>
+        <button
+          class="btn btn-success"
+          type="button"
+          (click)="sortByCreationDateAsc()"
+        >
+          Sort by Creation Date (Asc)
+        </button>
+        <button
+          class="btn btn-warning"
+          type="button"
+          (click)="sortByCreationDateDesc()"
+        >
+          Sort by Creation Date (Desc)
+        </button>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h4>URL List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let tutorial of tutorials; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveTutorial(tutorial, i)"
+        >
+          {{ tutorial.title }}
+        </li>
+      </ul>
+
+      <button class="btn btn-danger mt-3" (click)="removeAllTutorials()">
+        Remove All
+      </button>
+    </div>
+
+    <div class="col-md-6">
+      <app-tutorial-details
+        [viewMode]="true"
+        [currentTutorial]="currentTutorial"
+      ></app-tutorial-details>
+    </div>
+  </div>
+</div>
